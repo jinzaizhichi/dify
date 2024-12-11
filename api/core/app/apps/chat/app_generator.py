@@ -1,7 +1,7 @@
 import logging
 import threading
 import uuid
-from collections.abc import Generator
+from collections.abc import Generator, Mapping
 from typing import Any, Literal, Union, overload
 
 from flask import Flask, current_app
@@ -34,9 +34,9 @@ class ChatAppGenerator(MessageBasedAppGenerator):
         self,
         app_model: App,
         user: Union[Account, EndUser],
-        args: Any,
+        args: Mapping[str, Any],
         invoke_from: InvokeFrom,
-        stream: Literal[True] = True,
+        streaming: Literal[True],
     ) -> Generator[str, None, None]: ...
 
     @overload
@@ -44,19 +44,29 @@ class ChatAppGenerator(MessageBasedAppGenerator):
         self,
         app_model: App,
         user: Union[Account, EndUser],
-        args: Any,
+        args: Mapping[str, Any],
         invoke_from: InvokeFrom,
-        stream: Literal[False] = False,
-    ) -> dict: ...
+        streaming: Literal[False],
+    ) -> Mapping[str, Any]: ...
+
+    @overload
+    def generate(
+        self,
+        app_model: App,
+        user: Union[Account, EndUser],
+        args: Mapping[str, Any],
+        invoke_from: InvokeFrom,
+        streaming: bool,
+    ) -> Union[Mapping[str, Any], Generator[str, None, None]]: ...
 
     def generate(
         self,
         app_model: App,
         user: Union[Account, EndUser],
-        args: Any,
+        args: Mapping[str, Any],
         invoke_from: InvokeFrom,
-        stream: bool = True,
-    ) -> Union[dict, Generator[str, None, None]]:
+        streaming: bool = True,
+    ):
         """
         Generate App response.
 
@@ -142,7 +152,7 @@ class ChatAppGenerator(MessageBasedAppGenerator):
             invoke_from=invoke_from,
             extras=extras,
             trace_manager=trace_manager,
-            stream=stream,
+            stream=streaming,
         )
 
         # init generate records
@@ -179,7 +189,7 @@ class ChatAppGenerator(MessageBasedAppGenerator):
             conversation=conversation,
             message=message,
             user=user,
-            stream=stream,
+            stream=streaming,
         )
 
         return ChatAppGenerateResponseConverter.convert(response=response, invoke_from=invoke_from)
