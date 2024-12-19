@@ -106,6 +106,7 @@ class GetProcessRuleApi(Resource):
         # get default rules
         mode = DocumentService.DEFAULT_RULES["mode"]
         rules = DocumentService.DEFAULT_RULES["rules"]
+        limits = DocumentService.DEFAULT_RULES["limits"]
         if document_id:
             # get the latest process rule
             document = Document.query.get_or_404(document_id)
@@ -132,7 +133,7 @@ class GetProcessRuleApi(Resource):
                 mode = dataset_process_rule.mode
                 rules = dataset_process_rule.rules_dict
 
-        return {"mode": mode, "rules": rules}
+        return {"mode": mode, "rules": rules, "limits": limits}
 
 
 class DatasetDocumentListApi(Resource):
@@ -947,7 +948,7 @@ class DocumentRetryApi(DocumentResource):
                 if document.indexing_status == "completed":
                     raise DocumentAlreadyFinishedError()
                 retry_documents.append(document)
-            except Exception as e:
+            except Exception:
                 logging.exception(f"Failed to retry document, document id: {document_id}")
                 continue
         # retry document
