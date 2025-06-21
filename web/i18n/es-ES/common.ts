@@ -471,7 +471,6 @@ const translation = {
   apiBasedExtension: {
     title: 'Las extensiones basadas en API proporcionan una gestión centralizada de API, simplificando la configuración para su fácil uso en las aplicaciones de Dify.',
     link: 'Aprende cómo desarrollar tu propia Extensión API.',
-    linkUrl: 'https://docs.dify.ai/en/guides/extension/api-based-extension/README',
     add: 'Agregar Extensión API',
     selector: {
       title: 'Extensión API',
@@ -654,6 +653,7 @@ const translation = {
     auto: 'sistema',
     light: 'luz',
     theme: 'Tema',
+    dark: 'noche',
   },
   compliance: {
     iso27001: 'Certificación ISO 27001:2022',
