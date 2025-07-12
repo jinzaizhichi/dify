@@ -97,6 +97,7 @@ const translation = {
     completionUserDescription: 'به سرعت یک دستیار هوش مصنوعی برای وظایف تولید متن با پیکربندی ساده بسازید.',
     advancedShortDescription: 'گردش‌کار پیشرفته برای گفتگوهای چند مرحله‌ای',
     agentUserDescription: 'یک عامل هوشمند که قادر به استدلال تکراری و استفاده از ابزار مستقل برای دستیابی به اهداف وظیفه است.',
+    dropDSLToCreateApp: 'فایل DSL را اینجا رها کنید تا برنامه ساخته شود',
   },
   editApp: 'ویرایش اطلاعات',
   editAppTitle: 'ویرایش اطلاعات برنامه',
@@ -139,6 +140,14 @@ const translation = {
       notConfigured: 'برای فعال‌سازی ردیابی ارائه‌دهنده را پیکربندی کنید',
       moreProvider: 'ارائه‌دهندگان بیشتر',
     },
+    arize: {
+      title: 'Arize',
+      description: 'قابلیت مشاهده LLM در سطح سازمانی، ارزیابی آنلاین و آفلاین، نظارت و آزمایش — با پشتیبانی از OpenTelemetry. طراحی‌شده مخصوص برنامه‌های مبتنی بر LLM و عامل‌ها.',
+    },
+    phoenix: {
+      title: 'Phoenix',
+      description: 'پلتفرم متن‌باز و مبتنی بر OpenTelemetry برای مشاهده‌پذیری، ارزیابی، مهندسی پرامپت و آزمایش برای جریان‌های کاری و عامل‌های LLM شما.',
+    },
     langsmith: {
       title: 'LangSmith',
       description: 'یک پلتفرم همه‌کاره برای هر مرحله از چرخه عمر برنامه‌های مبتنی بر LLM.',
@@ -167,6 +176,7 @@ const translation = {
       title: 'بافندگی',
       description: 'ویو یک پلتفرم متن باز برای ارزیابی، آزمایش و نظارت بر برنامه‌های LLM است.',
     },
+    aliyun: {},
   },
   answerIcon: {
     descriptionInExplore: 'آیا از نماد web app برای جایگزینی 🤖 در Explore استفاده کنیم یا خیر',
@@ -213,12 +223,14 @@ const translation = {
     specific: 'فقط گروه‌ها یا اعضای خاصی می‌توانند به اپلیکیشن وب دسترسی پیدا کنند.',
     anyone: 'هر کسی می‌تواند به وب‌اپلیکیشن دسترسی پیدا کند',
     organization: 'هر کسی در سازمان می‌تواند به اپلیکیشن وب دسترسی پیدا کند.',
+    external: 'تنها کاربران خارجی تأیید شده می‌توانند به برنامه وب دسترسی پیدا کنند.',
   },
   accessControlDialog: {
     accessItems: {
       specific: 'گروه‌ها یا اعضای خاص',
       organization: 'فقط اعضای داخل سازمان',
       anyone: 'هر کسی که لینک را داشته باشد',
+      external: 'کاربران خارجی تأیید شده',
     },
     operateGroupAndMember: {
       searchPlaceholder: 'گروه‌ها و اعضا را جستجو کنید',

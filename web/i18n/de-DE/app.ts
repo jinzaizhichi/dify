@@ -95,6 +95,7 @@ const translation = {
     foundResult: '{{Anzahl}} Ergebnis',
     agentUserDescription: 'Ein intelligenter Agent, der in der Lage ist, iteratives Denken zu führen und autonome Werkzeuge zu verwenden, um Aufgabenziele zu erreichen.',
     agentShortDescription: 'Intelligenter Agent mit logischem Denken und autonomer Werkzeugnutzung',
+    dropDSLToCreateApp: 'Ziehen Sie die DSL-Datei hierher, um die App zu erstellen',
   },
   editApp: 'App bearbeiten',
   editAppTitle: 'App-Informationen bearbeiten',
@@ -137,6 +138,14 @@ const translation = {
       notConfigured: 'Anbieter konfigurieren, um Nachverfolgung zu aktivieren',
       moreProvider: 'Weitere Anbieter',
     },
+    arize: {
+      title: 'Arize',
+      description: 'Unternehmensgerechte LLM-Observierbarkeit, Online- und Offline-Bewertung, Überwachung und Experimentierung—unterstützt durch OpenTelemetry. Speziell für LLM- und agentenbasierte Anwendungen entwickelt.',
+    },
+    phoenix: {
+      title: 'Phoenix',
+      description: 'Open-Source- und OpenTelemetry-basierte Plattform für Observierbarkeit, Bewertung, Prompt-Engineering und Experimentierung für Ihre LLM-Workflows und -Agenten.',
+    },
     langsmith: {
       title: 'LangSmith',
       description: 'Eine All-in-One-Entwicklerplattform für jeden Schritt des LLM-gesteuerten Anwendungslebenszyklus.',
@@ -165,6 +174,7 @@ const translation = {
       title: 'Weben',
       description: 'Weave ist eine Open-Source-Plattform zur Bewertung, Testung und Überwachung von LLM-Anwendungen.',
     },
+    aliyun: {},
   },
   answerIcon: {
     descriptionInExplore: 'Gibt an, ob das web app Symbol zum Ersetzen 🤖 in Explore verwendet werden soll',
@@ -220,12 +230,14 @@ const translation = {
     anyone: 'Jeder kann auf die Webanwendung zugreifen.',
     specific: 'Nur bestimmte Gruppen oder Mitglieder können auf die Webanwendung zugreifen.',
     organization: 'Jeder in der Organisation kann auf die Webanwendung zugreifen.',
+    external: 'Nur authentifizierte externe Benutzer können auf die Webanwendung zugreifen.',
   },
   accessControlDialog: {
     accessItems: {
       anyone: 'Jeder mit dem Link',
       specific: 'Spezifische Gruppen oder Mitglieder',
       organization: 'Nur Mitglieder innerhalb des Unternehmens',
+      external: 'Authentifizierte externe Benutzer',
     },
     operateGroupAndMember: {
       searchPlaceholder: 'Gruppen und Mitglieder suchen',
